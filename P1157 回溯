@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define int long long
+
+int n,m;
+int arr=1;
+int a[1005];
+signed main()
+{
+	cin>>n>>m;
+	while(arr){
+		if(arr>=m+1){
+			for(int i=1;i<=m;i++){
+				cout<<setw(3)<<a[i];
+			}
+			cout<<'\n';
+			arr--;
+			continue;
+		}
+		if(!a[arr]){
+			a[arr]=a[arr-1]+1;
+			arr++;
+			continue;
+		}
+		if(a[arr]+m-arr<n){
+			a[arr++]++;
+			continue;
+		}
+		a[arr--]=0;
+	}
+	
+}
